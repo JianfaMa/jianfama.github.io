@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jianfama.github.io“ ”/sitemap.xml
+Sitemap: https://jianfama.github.io/sitemap.xml
