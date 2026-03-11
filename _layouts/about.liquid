@@ -40,6 +40,27 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    {% if page.show_education and page.education %}
+      <h2>Education</h2>
+      <div class="education-list">
+        {% for edu in page.education %}
+          <div class="education-item">
+            {% if edu.logo %}
+              <div class="education-logo">
+                {% assign education_logo_path = edu.logo | prepend: 'assets/img/' %}
+                {% include figure.liquid path=education_logo_path class="img-fluid" sizes="150px" alt=edu.logo_alt loading="eager" %}
+              </div>
+            {% endif %}
+            <div class="education-content">
+              {% for line in edu.lines %}
+                <p>{{ line | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% if page.show_publications %}
       <h2>Publications</h2>
       <div class="publications">
