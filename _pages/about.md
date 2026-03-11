@@ -29,6 +29,8 @@ education:
       - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
       - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)| Advisor: Prof. [Feng Zheng](https://faculty.sustech.edu.cn/fengzheng/en/)"
 
+show_publications: true
+
 show_research_visiting_experience: true
 research_visiting_experience:
   - logo_alt: POLYU logo
@@ -58,7 +60,7 @@ research_visiting_experience:
       - "[School of Computing (SoC)](https://www.comp.nus.edu.sg/) | [Summer Workshop (SWS) 2024](https://sws.comp.nus.edu.sg/2024/)"
       - "Visual Computing | Lecturer: Prof. [Terence Sim](https://tsim49.wixsite.com/terencesim/)"
 
-show_publications: true
+
 ---
 
 I am a fourth-year undergraduate student in Computer Science at Southern University of Science and Technology (SUSTech), and I will start my M.Sc. in Computer Science at The Chinese University of Hong Kong (CUHK) in Fall 2026. 
