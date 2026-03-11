@@ -90,6 +90,40 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+.about-page {
+  .post-header,
+  article {
+    max-width: 100%;
+  }
+
+  .profile.float-right {
+    width: 38%;
+    margin-left: 2rem;
+  }
+
+  .profile.float-left {
+    width: 38%;
+    margin-right: 2rem;
+  }
+
+  .clearfix {
+    max-width: 56%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-page {
+    .profile.float-right,
+    .profile.float-left,
+    .clearfix {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
 // CV
 
 .cv {

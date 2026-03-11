@@ -61,7 +61,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 860px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -279,8 +279,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Ma]
+  first_name: [Jianfa, J.]
 
   style: apa
   locale: en
