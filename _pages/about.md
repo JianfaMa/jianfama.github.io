@@ -32,6 +32,7 @@ education:
 show_research_visiting_experience: true
 research_visiting_experience:
   - logo_alt: POLYU logo
+    logo: icon/polyu_logo.png
     lines:
       - "**Semester Exchange**"
       - "Sep. 2025 – Dec. 2025"
@@ -39,7 +40,8 @@ research_visiting_experience:
       - "[BSc(Hons) in Artificial Intelligence and Information Engineering, Department of EEE](https://www.polyu.edu.hk/eee/)"
       -  "Core Courses: Deep Learning, Multimedia Communication, Web System and Technology"
 
-  - logo_alt: SUSTech logo
+  - logo: icon/sustech_logo.png
+    logo_alt: SUSTech logo
     lines:
       - "**Research Intern**"
       - "April. 2025 – Oct. 2025"
