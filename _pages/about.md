@@ -24,11 +24,10 @@ education:
     lines:
       - "Undergraduate: Sep. 2022 - Jul. 2026 (Expected)"
       - "[Southern University of Science and Technology (SUSTech)](https://sustech.edu.cn/)"
-      - "[Department of Computer Science and Engineering (CSE)](https://cse.sustech.edu.cn/) and [Zhiren College](https://osa.sustech.edu.cn/index.php?g=School&m=College&a=index&pterm=24)"
-      - "Major: Computer Science and Technology (**GPA: 3.97 / 4.00, rank: 1 / 167**)"
-      - "Member of **Turing Class** (designated for elite CS students at SUSTech)"
-      - "Affiliation: [Space-Time AI Research (STAR) Lab](https://zhengfenglab.com/)"
-      - "Supervisor: Prof. [Feng Zheng](http://faculty.sustech.edu.cn/fengzheng/en/) | Advisor: Prof. [Jin Zhang](https://www.sustech.edu.cn/en/faculties/zhangjin-2.html)"
+      - "[Department of Computer Science and Engineering (CSE)](https://cse.sustech.edu.cn/)"
+      - "Major: Computer Science and Technology"
+      - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
+      - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)| Advisor: Prof. [Feng Zheng](https://faculty.sustech.edu.cn/fengzheng/en/)"
 
 show_publications: true
 ---
