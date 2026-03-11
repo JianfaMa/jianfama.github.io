@@ -61,6 +61,27 @@ layout: default
       </div>
     {% endif %}
 
+    {% if page.show_research_visiting_experience and page.research_visiting_experience %}
+      <h2>Research and Visiting Experience</h2>
+      <div class="education-list">
+        {% for exp in page.research_visiting_experience %}
+          <div class="education-item">
+            {% if exp.logo %}
+              <div class="education-logo">
+                {% assign experience_logo_path = exp.logo | prepend: 'assets/img/' %}
+                {% include figure.liquid path=experience_logo_path class="img-fluid" sizes="150px" alt=exp.logo_alt loading="eager" %}
+              </div>
+            {% endif %}
+            <div class="education-content">
+              {% for line in exp.lines %}
+                <p>{{ line | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% if page.show_publications %}
       <h2>Publications</h2>
       <div class="publications">
