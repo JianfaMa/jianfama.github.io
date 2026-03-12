@@ -16,18 +16,18 @@ education:
     logo_alt: CUHK logo
     lines:
       - "Postgraduate: Sep. 2026 - Jul. 2027 (Expected)"
-      - "[The Chinese University of Hong Kong (CUHK)](https://www.cuhk.edu.hk/)"
-      - "[Department of Computer Science and Engineering (CSE)](https://www.cse.cuhk.edu.hk/)"
+      - "[The Chinese University of Hong Kong (CUHK)]"
+      - "[Department of Computer Science and Engineering (CSE)]"
       - "Program: [Master of Science in Computer Science](http://msc.cse.cuhk.edu.hk/)"
   - logo: icon/sustech_logo.png
     logo_alt: SUSTech logo
     lines:
       - "Undergraduate: Sep. 2022 - Jul. 2026 (Expected)"
-      - "[Southern University of Science and Technology (SUSTech)](https://sustech.edu.cn/)"
-      - "[Department of Computer Science and Engineering (CSE)](https://cse.sustech.edu.cn/)"
+      - "[Southern University of Science and Technology (SUSTech)]"
+      - "[Department of Computer Science and Engineering (CSE)]
       - "Major: Computer Science and Technology"
       - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
-      - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)| Advisor: Prof. [Feng Zheng](https://faculty.sustech.edu.cn/fengzheng/en/)"
+      - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
 
 show_publications: true
 
@@ -38,8 +38,8 @@ research_visiting_experience:
     lines:
       - "**Semester Exchange**"
       - "Sep. 2025 – Dec. 2025"
-      - "[The Hong Kong Polytechnic University](https://www.polyu.edu.hk/)"
-      - "[BSc(Hons) in Artificial Intelligence and Information Engineering, Department of EEE](https://www.polyu.edu.hk/eee/)"
+      - "[The Hong Kong Polytechnic University]"
+      - "[BSc(Hons) in Artificial Intelligence and Information Engineering, Department of EEE]"
       -  "Core Courses: Deep Learning, Multimedia Communication, Web System and Technology"
 
   - logo: icon/sustech_logo.png
@@ -47,7 +47,7 @@ research_visiting_experience:
     lines:
       - "**Research Intern**"
       - "April. 2025 – Oct. 2025"
-      - "[The Department of Mechanical and Energy Engineering at SUSTech](https://mee.sustech.edu.cn/?lang=en)"
+      - "[The Department of Mechanical and Energy Engineering at SUSTech]"
       - "[SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
       - "Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
 
@@ -56,8 +56,8 @@ research_visiting_experience:
     lines:
       - "**Summer Workshop**"
       - "May 2024 - Jul. 2024"
-      - "[National University of Singapore (NUS)](https://nus.edu.sg/)"
-      - "[School of Computing (SoC)](https://www.comp.nus.edu.sg/) | [Summer Workshop (SWS) 2024](https://sws.comp.nus.edu.sg/2024/)"
+      - "[National University of Singapore (NUS)]"
+      - "[School of Computing (SoC)] | [Summer Workshop (SWS) 2024](https://sws.comp.nus.edu.sg/2024/)"
       - "Visual Computing | Lecturer: Prof. [Terence Sim](https://tsim49.wixsite.com/terencesim/)"
 
 
