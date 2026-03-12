@@ -24,7 +24,7 @@ education:
     lines:
       - "Undergraduate: Sep. 2022 - Jul. 2026 (Expected)"
       - "[Southern University of Science and Technology (SUSTech)]"
-      - "[Department of Computer Science and Engineering (CSE)]
+      - "[Department of Computer Science and Engineering (CSE)]"
       - "Major: Computer Science and Technology"
       - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
       - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
