@@ -62,17 +62,6 @@ layout: default
     {% endif %}
 
     {% if page.show_research_visiting_experience and page.research_visiting_experience %}
-      {% assign has_research_visiting_experience = true %}
-    {% endif %}
-
-    {% if page.show_publications %}
-      <h2>Publications</h2>
-      <div class="publications">
-        {% bibliography --group_by none %}
-      </div>
-    {% endif %}
-
-    {% if has_research_visiting_experience %}
       <h2>Research and Visiting Experience</h2>
       <div class="education-list">
         {% for exp in page.research_visiting_experience %}
@@ -90,6 +79,13 @@ layout: default
             </div>
           </div>
         {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.show_publications %}
+      <h2>Publications</h2>
+      <div class="publications">
+        {% bibliography --group_by none %}
       </div>
     {% endif %}
 
