@@ -34,14 +34,14 @@ research_visiting_experience:
       - "**Semester Exchange**"
       - "Sep. 2025 – Dec. 2025"
       - "The Hong Kong Polytechnic University"
-      - "BSc(Hons) in Artificial Intelligence and Information Engineering, Department of EEE"
+      - "BSc(Hons) in Artificial Intelligence and Information Engineering"
 
   - logo: icon/sustech_logo.png
     logo_alt: SUSTech logo
     lines:
       - "**Research Intern**"
       - "Apr. 2025 – Oct. 2025"
-      - "The Department of Mechanical and Energy Engineering at SUSTech"
+      - "Department of Mechanical and Energy Engineering at SUSTech"
       - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
       - "Supervisor: [Prof. Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
 
