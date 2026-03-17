@@ -74,4 +74,4 @@ I am a fourth-year undergraduate student in Computer Science at Southern Univers
 
 My research interests lie in embodied AI, autonomous driving, and vision-language models, focusing on enabling autonomous agents to perceive, reason, and act in real-world environments. 
 
-📧: majianfa2004@gmail.com
+How to reach me: majianfa2004@gmail.com
