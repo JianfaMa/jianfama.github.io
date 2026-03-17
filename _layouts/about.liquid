@@ -82,6 +82,27 @@ layout: default
       </div>
     {% endif %}
 
+    {% if page.show_awards and page.awards %}
+      <h2>Awards & Honors</h2>
+      <div class="education-list">
+        {% for award in page.awards %}
+          <div class="education-item">
+            {% if award.logo %}
+              <div class="education-logo">
+                {% assign award_logo_path = award.logo | prepend: 'assets/img/' %}
+                {% include figure.liquid path=award_logo_path class="education-logo-image" width="150" sizes="150px" alt=award.logo_alt loading="eager" %}
+              </div>
+            {% endif %}
+            <div class="education-content">
+              {% for line in award.lines %}
+                <p>{{ line | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% if page.show_publications %}
       <h2>Publications</h2>
       <div class="publications">

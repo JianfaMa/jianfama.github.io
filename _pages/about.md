@@ -17,16 +17,14 @@ education:
     lines:
       - "Postgraduate: Sep. 2026 - Jul. 2027 (Expected)"
       - "The Chinese University of Hong Kong (CUHK)"
-      - "[Master of Science in Computer Science](http://msc.cse.cuhk.edu.hk/)"
+      - "[M.Sc in Computer Science](http://msc.cse.cuhk.edu.hk/)"
   - logo: icon/sustech_logo.png
     logo_alt: SUSTech logo
     lines:
       - "Undergraduate: Sep. 2022 - Jul. 2026 (Expected)"
       - "Southern University of Science and Technology (SUSTech)"
-      - "M.Eng in Computer Science and Technology"
-      - "Supervisor: Prof. [Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
-
-show_publications: true
+      - "B.Eng in Computer Science and Technology"
+      - "Supervisor: [Prof. Qi Hao](https://faculty.sustech.edu.cn/haoq/en/) & [Prof. Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
 
 show_research_visiting_experience: true
 research_visiting_experience:
@@ -44,8 +42,8 @@ research_visiting_experience:
       - "**Research Intern**"
       - "Apr. 2025 – Oct. 2025"
       - "The Department of Mechanical and Energy Engineering at SUSTech"
-      - "Affliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
-      - "Supervisor: Prof. [Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
+      - "Affiliation: [SmarT Autonomous Robotics (STAR) Group](https://robotics-star.com/)"
+      - "Supervisor: [Prof. Boyu Zhou](https://mee.sustech.edu.cn/en/jiaozhiyuangong/3624.html)"
 
   - logo: icon/nus_logo.png
     logo_alt: NUS logo
@@ -54,7 +52,20 @@ research_visiting_experience:
       - "May 2024 - Jul. 2024"
       - "School of Computing (SoC), National University of Singapore (NUS)"
       - "[Summer Workshop (SWS) 2024](https://sws.comp.nus.edu.sg/2024/)"
-      - "Program: Visual Computing | Lecturer: Prof. [Terence Sim](https://tsim49.wixsite.com/terencesim/)"
+      - "Program: Visual Computing | Lecturer: [Prof. Terence Sim](https://tsim49.wixsite.com/terencesim/)"
+
+show_publications: true
+
+show_awards: true
+awards:
+  - logo: icon/meituan_uav.png
+    logo_alt: Meituan UAV
+    lines:
+      - "**Excellent Creativity Award (Second Place)**"
+      - "Aug. 2025 – Oct. 2025"
+      - "[Meituan 3rd Low-Altitude Economy Intelligent Flight Management Challenge](https://uav-challenge.meituan.com/)"
+      - "Project: Embodied Navigation and Delivery System for Open World with Natural Language Instructions"
+      - "Awarded by Meituan Academy of Robotics Shenzhen at [IROS 2025](https://iros2025.org/)"
 
 
 ---
