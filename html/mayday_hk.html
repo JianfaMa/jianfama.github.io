@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>H3&A0 MDHK GO GO GO!</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+SC:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e8001d;
+    --yellow: #ffe600;
+    --orange: #ff6b00;
+    --dark: #0a0a0a;
+    --dark2: #111;
+    --white: #f5f5f0;
+    --gray: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    width: 100%; min-height: 100vh;
+    background: var(--dark);
+    font-family: 'Noto Sans SC', sans-serif;
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  .page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+    animation: fadeIn 0.4s ease;
+  }
+  .page.active { display: flex; flex-direction: column; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── NOISE TEXTURE OVERLAY ─── */
+  .page::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 100; opacity: 0.5;
+  }
+
+  /* ══════════════ PAGE 1 ══════════════ */
+  #p1 {
+    background: var(--dark);
+    justify-content: center; align-items: center;
+    text-align: center; padding: 40px 24px;
+    overflow: hidden;
+  }
+
+  .bg-poster {
+    position: absolute; inset: 0;
+    background: 
+      linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.85) 100%),
+      url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mayday_5566_Comeback_Concert_poster.jpg/800px-Mayday_5566_Comeback_Concert_poster.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+
+  .p1-content { position: relative; z-index: 2; width: 100%; }
+
+  .logo-strip {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 6px;
+    color: var(--yellow); opacity: 0.8;
+    margin-bottom: 32px;
+  }
+
+  .mayday-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 22vw, 96px);
+    line-height: 0.9;
+    color: var(--white);
+    text-shadow: 0 0 40px rgba(232,0,29,0.8), 0 0 80px rgba(232,0,29,0.4);
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+  }
+
+  .date-badge {
+    display: inline-block;
+    background: var(--red);
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+  }
+
+  .invite-text {
+    font-size: 16px; line-height: 1.7;
+    color: var(--white); opacity: 0.9;
+    margin-bottom: 40px;
+    padding: 0 8px;
+  }
+  .invite-text strong { color: var(--yellow); }
+
+  .btn-group { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+  .btn {
+    display: block; width: 100%; max-width: 300px;
+    padding: 16px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 3px;
+    cursor: pointer; border: none; outline: none;
+    position: relative; overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn:active { transform: scale(0.96); }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 4px 24px rgba(232,0,29,0.5);
+  }
+  .btn-primary:hover { box-shadow: 0 6px 32px rgba(232,0,29,0.7); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    box-shadow: 0 0 16px rgba(255,230,0,0.2);
+  }
+  .btn-secondary:hover { box-shadow: 0 0 28px rgba(255,230,0,0.4); }
+
+  .btn-outline {
+    background: transparent; color: var(--gray);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px; font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .sparkle {
+    position: absolute; bottom: -20px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px; letter-spacing: 8px;
+    color: var(--gray); opacity: 0.5;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ══════════════ PAGE 2 ══════════════ */
+  #p2 {
+    background: var(--dark2);
+    padding: 0;
+  }
+
+  .p2-hero {
+    width: 100%; height: 240px;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0) 30%, var(--dark2) 100%),
+      url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/HK_Causeway_Bay_%E9%8A%85%E9%91%BC%E7%81%A3_SOGO_Department_Store_%E5%B4%87%E5%85%89%E7%99%BE%E8%B2%A8%E5%85%AC%E5%8F%B8_night_Dec-2013.jpg/1200px-HK_Causeway_Bay_%E9%8A%85%E9%91%BC%E7%81%A3_SOGO_Department_Store_%E5%B4%87%E5%85%89%E7%99%BE%E8%B2%A8%E5%85%AC%E5%8F%B8_night_Dec-2013.jpg') center/cover no-repeat;
+    flex-shrink: 0;
+  }
+
+  .p2-body { padding: 0 24px 48px; flex: 1; }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 4px;
+    color: var(--red); text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px; letter-spacing: 2px;
+    line-height: 1.1; margin-bottom: 28px;
+    color: var(--white);
+  }
+
+  .choice-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .choice-card:active { transform: scale(0.98); }
+  .choice-card:hover {
+    background: rgba(232,0,29,0.1);
+    border-color: var(--red);
+  }
+
+  .choice-icon {
+    font-size: 32px; flex-shrink: 0;
+    width: 48px; text-align: center;
+  }
+
+  .choice-info { flex: 1; }
+  .choice-name {
+    font-size: 17px; font-weight: 700;
+    margin-bottom: 4px; line-height: 1.3;
+  }
+  .choice-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  .choice-arrow {
+    font-size: 20px; color: var(--red); flex-shrink: 0;
+  }
+
+  /* ══════════════ TIMELINE PAGES ══════════════ */
+  .timeline-page { background: var(--dark); }
+
+  .tl-header {
+    padding: 20px 24px 0;
+    display: flex; align-items: center; gap: 16px;
+    position: sticky; top: 0;
+    background: var(--dark);
+    z-index: 10;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .back-btn {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.07);
+    border: none; color: var(--white);
+    font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .back-btn:hover { background: rgba(255,255,255,0.14); }
+
+  .tl-header-text { flex: 1; }
+  .tl-header-label { font-size: 10px; letter-spacing: 3px; color: var(--red); font-family: 'Space Mono', monospace; }
+  .tl-header-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; }
+
+  .tl-body { padding: 24px 24px 100px; }
+
+  /* Tab switcher for plans */
+  .tab-bar {
+    display: flex; gap: 0;
+    margin-bottom: 28px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .tab {
+    flex: 1; padding: 10px;
+    background: transparent; border: none; color: var(--gray);
+    font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .tab.active {
+    background: var(--red); color: var(--white);
+  }
+
+  .plan { display: none; }
+  .plan.active { display: block; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 8px; top: 6px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--red), var(--orange), transparent);
+  }
+
+  .tl-item {
+    position: relative; margin-bottom: 24px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -24px; top: 6px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 8px rgba(232,0,29,0.6);
+  }
+
+  .tl-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--yellow);
+    letter-spacing: 1px; margin-bottom: 3px;
+  }
+  .tl-text { font-size: 15px; line-height: 1.6; color: var(--white); }
+  .tl-text .highlight { color: var(--orange); font-weight: 700; }
+
+  .party-item::before { background: var(--yellow); box-shadow: 0 0 12px rgba(255,230,0,0.8); }
+  .party-item .tl-text { color: var(--yellow); font-weight: 700; font-size: 16px; }
+
+  /* Fixed bottom bar */
+  .bottom-bar {
+    position: fixed; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 100%; max-width: 430px;
+    padding: 16px 24px;
+    background: linear-gradient(to top, var(--dark) 60%, transparent);
+    display: flex; gap: 12px; z-index: 50;
+  }
+
+  .btn-confirm {
+    flex: 1; padding: 16px;
+    background: var(--red); border: none;
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; letter-spacing: 3px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(232,0,29,0.5);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-confirm:active { transform: scale(0.97); }
+
+  .btn-back-sm {
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  /* ══════════════ CHECKLIST PAGE ══════════════ */
+  #p5 { background: var(--dark); }
+
+  .checklist-header {
+    padding: 40px 24px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .checklist-pre {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 4px; color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .checklist-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px; letter-spacing: 2px;
+    line-height: 1; margin-bottom: 8px;
+  }
+
+  .checklist-sub { font-size: 13px; color: var(--gray); }
+
+  .checklist-body { padding: 24px; padding-bottom: 40px; flex: 1; overflow-y: auto; }
+
+  .check-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+  }
+
+  .check-box {
+    width: 24px; height: 24px; flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; margin-top: 1px;
+  }
+  .check-box.checked {
+    background: var(--red); border-color: var(--red);
+  }
+  .check-box.checked::after { content: '✓'; color: white; font-size: 14px; font-weight: 700; }
+
+  .check-content { flex: 1; }
+  .check-title { font-size: 16px; font-weight: 700; margin-bottom: 3px; transition: opacity 0.2s; }
+  .check-title.done { opacity: 0.4; text-decoration: line-through; }
+  .check-note { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  .check-emoji { font-size: 24px; }
+
+  .cost-section {
+    margin-top: 28px;
+    padding: 20px;
+    background: rgba(255,230,0,0.07);
+    border: 1px solid rgba(255,230,0,0.2);
+  }
+  .cost-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 2px;
+    color: var(--yellow); margin-bottom: 16px;
+  }
+  .cost-row {
+    display: flex; justify-content: space-between;
+    font-size: 14px; padding: 6px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .cost-row:last-child { border: none; }
+  .cost-row .cost-label { color: var(--gray); }
+  .cost-row .cost-val { font-family: 'Space Mono', monospace; color: var(--white); }
+
+  .finale-msg {
+    margin-top: 28px;
+    text-align: center;
+    padding: 28px;
+  }
+  .finale-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px; letter-spacing: 4px;
+    color: var(--red);
+    text-shadow: 0 0 30px rgba(232,0,29,0.6);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .finale-small { font-size: 14px; color: var(--gray); line-height: 1.8; }
+
+  /* Progress dots */
+  .progress-dots {
+    display: flex; justify-content: center; gap: 6px;
+    padding-top: 16px;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.3s, transform 0.3s;
+  }
+  .dot.active { background: var(--red); transform: scale(1.3); }
+  .dot.done { background: rgba(232,0,29,0.4); }
+
+  /* Pulse animation for concert */
+  @keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 8px rgba(232,0,29,0.6); }
+    50% { box-shadow: 0 0 20px rgba(232,0,29,1), 0 0 40px rgba(232,0,29,0.4); }
+  }
+  .party-item::before { animation: pulse-red 1.5s infinite; }
+
+  /* Glow text */
+  .glow { text-shadow: 0 0 20px rgba(255,230,0,0.6); color: var(--yellow); }
+</style>
+</head>
+<body>
+
+<!-- ════ PAGE 1: LANDING ════ -->
+<div class="page active" id="p1">
+  <div class="bg-poster"></div>
+  <div class="p1-content">
+    <div class="logo-strip">H3 × A0 × MAYDAY × HK</div>
+    <div class="mayday-title">MAY<br>DAY</div>
+    <div class="date-badge">香港站 · 3.27.2025</div>
+    <p class="invite-text">
+      Dear <strong>A0</strong>,<br>
+      would you like to go to<br>
+      <strong>mayday land</strong> on 3/27? 🎸
+    </p>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="goTo('p2')">YES !!!</button>
+      <button class="btn btn-secondary" onclick="goTo('p2')">ABSOLUTELY YES !!</button>
+    </div>
+    <div class="progress-dots" style="margin-top:32px;">
+      <div class="dot active" id="dot1"></div>
+      <div class="dot" id="dot2"></div>
+      <div class="dot" id="dot3"></div>
+      <div class="dot" id="dot4"></div>
+    </div>
+  </div>
+  <div class="sparkle">GO GO GO</div>
+</div>
+
+<!-- ════ PAGE 2: CHOOSE TRIP TYPE ════ -->
+<div class="page" id="p2">
+  <div class="p2-hero"></div>
+  <div class="p2-body">
+    <div class="section-label">STEP 02 · PLAN</div>
+    <div class="section-title">How long would you<br>like to spend?</div>
+
+    <div class="choice-card" onclick="goTo('p3')">
+      <div class="choice-icon">🗺️</div>
+      <div class="choice-info">
+        <div class="choice-name">One Day Trip to HK</div>
+        <div class="choice-desc">Stayreal Park · 铜锣湾美食 · 维港 · 演唱会</div>
+      </div>
+      <div class="choice-arrow">›</div>
+    </div>
+
+    <div class="choice-card" onclick="goTo('p4')">
+      <div class="choice-icon">🎵</div>
+      <div class="choice-info">
+        <div class="choice-name">Only Watching Concert</div>
+        <div class="choice-desc">直奔启德 · 轻装上阵 · 早点到家</div>
+      </div>
+      <div class="choice-arrow">›</div>
+    </div>
+
+    <div class="progress-dots" style="margin-top:32px;">
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PAGE 3: ONE DAY TRIP ════ -->
+<div class="page timeline-page" id="p3">
+  <div class="tl-header">
+    <button class="back-btn" onclick="goTo('p2')">‹</button>
+    <div class="tl-header-text">
+      <div class="tl-header-label">OPTION A · ONE DAY TRIP</div>
+      <div class="tl-header-title">行程时间线</div>
+    </div>
+  </div>
+  <div class="tl-body">
+    <div class="tab-bar">
+      <button class="tab active" onclick="switchPlan('planA', this)">PLAN A · 铜锣湾</button>
+      <button class="tab" onclick="switchPlan('planB', this)">PLAN B · HKUST</button>
+    </div>
+
+    <!-- PLAN A -->
+    <div class="plan active" id="planA">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">早上</div>
+          <div class="tl-text">从<span class="highlight">大学城</span>出发 🚌</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">中午 ~12:00</div>
+          <div class="tl-text">抵达<span class="highlight">铜锣湾</span>，觅食 🍜<br><small style="color:var(--gray)">美食探索时间！</small></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">下午</div>
+          <div class="tl-text">逛<span class="highlight">维港的卜卜</span> 🧡<br><small style="color:var(--gray)">Stayreal × 维多利亚港打卡</small></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">进场前</div>
+          <div class="tl-text">逛 <a href="https://www.xiaohongshu.com/user/profile/644032c10000000010024082/69bd1df8000000002102c106" target="_blank" style="color:var(--yellow)">Airside · Stayreal Park</a> 🏁<br><small style="color:var(--gray)">超真实公园 · 香港站</small></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:30</div>
+          <div class="tl-text">🎪 <span class="highlight">入场！</span> 启德体育园</div>
+        </div>
+        <div class="tl-item party-item">
+          <div class="tl-time">19:30 — 22:30</div>
+          <div class="tl-text">🎤 PARTY PARTY ALL NIGHT !!!</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">22:45</div>
+          <div class="tl-text">永东巴士 → 口岸 → 广州 🚌</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">00:30</div>
+          <div class="tl-text">到<span class="highlight">大学城</span> or 云景 🏠<br><small style="color:var(--yellow)">北苑提供单人洗漱 + 住宿 ✨</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN B -->
+    <div class="plan" id="planB">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">早上</div>
+          <div class="tl-text">从<span class="highlight">大学城</span>出发 🚌</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">上午</div>
+          <div class="tl-text">逛<span class="highlight">HKUST 科大</span> 🏫<br><small style="color:var(--gray)">网红打卡校园 · 海景超美</small></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">17:00</div>
+          <div class="tl-text">出发前往<span class="highlight">启德体育园</span> 🏟️</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:30</div>
+          <div class="tl-text">🎪 <span class="highlight">入场！</span></div>
+        </div>
+        <div class="tl-item party-item">
+          <div class="tl-time">19:30 — 22:30</div>
+          <div class="tl-text">🎤 PARTY PARTY ALL NIGHT !!!</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">22:45</div>
+          <div class="tl-text">永东巴士 → 口岸 → 广州 🚌</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">00:30</div>
+          <div class="tl-text">到<span class="highlight">大学城</span> or 云景 🏠<br><small style="color:var(--yellow)">北苑提供单人洗漱 + 住宿 ✨</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-dots" style="margin-top:16px;">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <button class="btn-back-sm" onclick="goTo('p2')">返回</button>
+    <button class="btn-confirm" onclick="goTo('p5')">确定！GO GO →</button>
+  </div>
+</div>
+
+<!-- ════ PAGE 4: ONLY CONCERT ════ -->
+<div class="page timeline-page" id="p4">
+  <div class="tl-header">
+    <button class="back-btn" onclick="goTo('p2')">‹</button>
+    <div class="tl-header-text">
+      <div class="tl-header-label">OPTION B · CONCERT ONLY</div>
+      <div class="tl-header-title">行程时间线</div>
+    </div>
+  </div>
+  <div class="tl-body">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">周五 14:00</div>
+        <div class="tl-text">🚗 从<span class="highlight">大学城</span>出发 → 口岸<br><small style="color:var(--gray)">约 1.5 小时</small></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">约 15:30</div>
+        <div class="tl-text">福田口岸过境 → 启德体育园 🏟️<br><small style="color:var(--gray)">约 1 小时</small></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">18:30</div>
+        <div class="tl-text">🎪 <span class="highlight">入场！</span> 启德体育园</div>
+      </div>
+      <div class="tl-item party-item">
+        <div class="tl-time">19:30 — 22:30</div>
+        <div class="tl-text">🎤 PARTY PARTY ALL NIGHT !!!</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">22:45</div>
+        <div class="tl-text">永东巴士 → 口岸 → 广州 🚌</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">00:30</div>
+        <div class="tl-text">到<span class="highlight">大学城</span> or 云景 🏠<br><small style="color:var(--yellow)">北苑免费提供单人洗漱 + 住宿 ✨</small></div>
+      </div>
+    </div>
+    <div class="progress-dots" style="margin-top:16px;">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <button class="btn-back-sm" onclick="goTo('p2')">返回</button>
+    <button class="btn-confirm" onclick="goTo('p5')">确定！GO GO →</button>
+  </div>
+</div>
+
+<!-- ════ PAGE 5: CHECKLIST ════ -->
+<div class="page" id="p5">
+  <div class="checklist-header">
+    <div class="checklist-pre">STEP 04 · CHECKLIST</div>
+    <div class="checklist-title">行前准备 &<br>通勤费用</div>
+    <div class="checklist-sub">点击打勾，逐一搞定 ✓</div>
+    <div class="progress-dots" style="justify-content:flex-start; padding-top:12px;">
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot done"></div>
+      <div class="dot active"></div>
+    </div>
+  </div>
+
+  <div class="checklist-body">
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-emoji">🪪</div>
+      <div class="check-content">
+        <div class="check-title">一起去派出所办签注</div>
+        <div class="check-note">3.27 之前任意时间 · anytime before 3/27</div>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-emoji">🪄</div>
+      <div class="check-content">
+        <div class="check-title">荧光棒充电！！！</div>
+        <div class="check-note">演唱会必备神器，记得充满电</div>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-emoji">📸</div>
+      <div class="check-content">
+        <div class="check-title">拍立得</div>
+        <div class="check-note">A0 带 📷</div>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-emoji">📱</div>
+      <div class="check-content">
+        <div class="check-title">手机支架</div>
+        <div class="check-note">A0 带，拍视频必备</div>
+      </div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"></div>
+      <div class="check-emoji">🚌</div>
+      <div class="check-content">
+        <div class="check-title">永东回程车票</div>
+        <div class="check-note">提前订好！22:45 场次</div>
+      </div>
+    </div>
+
+    <div class="cost-section">
+      <div class="cost-title">💰 通勤 Cost</div>
+      <div class="cost-row">
+        <span class="cost-label">永东大巴（回程）</span>
+        <span class="cost-val">~¥100</span>
+      </div>
+      <div class="cost-row">
+        <span class="cost-label">港铁 / 地铁（HK内）</span>
+        <span class="cost-val">~HK$30–50</span>
+      </div>
+    </div>
+
+    <!-- hidden audio element -->
+    <audio id="party-audio" src="08 - 派对动物.flac" preload="auto"></audio>
+
+    <div class="finale-msg">
+      <button class="lets-go-btn" id="letsGoBtn" onclick="triggerParty()">
+        <span class="lets-go-inner">LET'S<br>GO!!!</span>
+        <span class="lets-go-hint">点我开party 🎶</span>
+      </button>
+
+      <div id="party-blast" class="party-blast" style="display:none">
+        <div class="blast-line1">LET'S GO</div>
+        <div class="blast-line2">PARTY PARTY<br>ALL NIGHT!!!</div>
+        <div class="blast-line3">疯狂到日出</div>
+        <div class="blast-line4">我们天生就是<br>派对动物！</div>
+        <div class="blast-stars">🎤 🎸 🪄 🎆 🎤 🎸 🪄 🎆</div>
+      </div>
+
+      <div class="finale-small" style="margin-top:16px;">
+        五月天 · 香港 · 回到那一天<br>
+        H3 × A0 · 3.27.2025 🎸
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ── LET'S GO BUTTON ── */
+  .lets-go-btn {
+    display: flex; flex-direction: column; align-items: center;
+    background: var(--red);
+    border: none; cursor: pointer;
+    padding: 24px 40px;
+    width: 100%;
+    position: relative; overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 0 32px rgba(232,0,29,0.5);
+    animation: btn-breathe 2.5s ease-in-out infinite;
+  }
+  @keyframes btn-breathe {
+    0%, 100% { box-shadow: 0 0 24px rgba(232,0,29,0.5); }
+    50%       { box-shadow: 0 0 48px rgba(232,0,29,0.9), 0 0 80px rgba(232,0,29,0.3); }
+  }
+  .lets-go-btn:active { transform: scale(0.96); }
+  .lets-go-inner {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px; letter-spacing: 4px;
+    color: var(--white); line-height: 0.95;
+    display: block;
+  }
+  .lets-go-hint {
+    font-size: 12px; color: rgba(255,255,255,0.7);
+    letter-spacing: 2px; margin-top: 8px;
+    font-family: 'Space Mono', monospace;
+    display: block;
+  }
+  /* ripple on click */
+  .lets-go-btn::after {
+    content: ''; position: absolute;
+    width: 200%; height: 200%; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+  }
+  .lets-go-btn.ripple::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  /* ── PARTY BLAST ── */
+  .party-blast {
+    background: var(--dark);
+    border: 2px solid var(--red);
+    padding: 28px 20px;
+    text-align: center;
+    animation: blast-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @keyframes blast-in {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .blast-line1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; letter-spacing: 8px;
+    color: var(--red); margin-bottom: 4px;
+  }
+  .blast-line2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 46px; letter-spacing: 3px; line-height: 0.95;
+    color: var(--red);
+    text-shadow: 0 0 20px rgba(232,0,29,0.7), 0 0 60px rgba(232,0,29,0.3);
+    animation: flicker 0.1s infinite alternate;
+    margin-bottom: 12px;
+  }
+  @keyframes flicker {
+    from { text-shadow: 0 0 20px rgba(232,0,29,0.7), 0 0 60px rgba(232,0,29,0.3); }
+    to   { text-shadow: 0 0 30px rgba(232,0,29,1),   0 0 80px rgba(232,0,29,0.5); }
+  }
+  .blast-line3 {
+    font-size: 22px; font-weight: 900;
+    color: var(--yellow); letter-spacing: 4px;
+    margin-bottom: 8px;
+    animation: slide-in 0.5s 0.15s both;
+  }
+  .blast-line4 {
+    font-size: 20px; font-weight: 700;
+    color: var(--white); line-height: 1.4;
+    margin-bottom: 16px;
+    animation: slide-in 0.5s 0.25s both;
+  }
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .blast-stars {
+    font-size: 18px; letter-spacing: 4px;
+    animation: stars-scroll 3s linear infinite;
+    white-space: nowrap; overflow: hidden;
+  }
+  @keyframes stars-scroll {
+    0%   { letter-spacing: 4px; opacity: 0.7; }
+    50%  { letter-spacing: 8px; opacity: 1; }
+    100% { letter-spacing: 4px; opacity: 0.7; }
+  }
+
+</style>
+
+<script>
+  function goTo(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function switchPlan(planId, btn) {
+    document.querySelectorAll('.plan').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(planId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleCheck(item) {
+    const box = item.querySelector('.check-box');
+    const title = item.querySelector('.check-title');
+    box.classList.toggle('checked');
+    title.classList.toggle('done');
+  }
+
+  function triggerParty() {
+    const btn = document.getElementById('letsGoBtn');
+    const blast = document.getElementById('party-blast');
+    const audio = document.getElementById('party-audio');
+
+    // ripple
+    btn.classList.add('ripple');
+    setTimeout(() => btn.classList.remove('ripple'), 500);
+
+    // show blast
+    blast.style.display = 'block';
+    blast.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // play audio (user gesture guarantees autoplay permission)
+    audio.currentTime = 0;
+    audio.play();
+  }
+</script>
+</body>
+</html>
