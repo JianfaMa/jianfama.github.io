@@ -9,6 +9,7 @@ _site
 .tweet-cache
 .venv
 assets/libs/
+assets/video/airhunt_sim_demo.mp4
 assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/

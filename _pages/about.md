@@ -6,9 +6,9 @@ subtitle:
 
 profile:
   align: right
-  image: prof_bug.png
+  image: prof_bug.jpg
   image_circular: false # crops the image to make it circular
-  more_info: push
+  more_info: 
 
 show_education: true
 education:
