@@ -3,28 +3,69 @@ layout: default
 ---
 <div class="post about-page">
   <style>
-    .profile .img-fluid {
-      max-width: 70%;
-      margin: 0 auto;
-      display: block;
+    /* Profile Image */
+    .about-page .profile.float-right {
+      width: 28%; /* Smaller container than default 38% */
+      margin-left: 2rem;
     }
-    .education-logo {
+    .profile .img-fluid {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px; /* Soft rounded corners */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Elegant shadow */
+    }
+
+    /* Education and Experience logos */
+    .about-page .education-item {
+      align-items: center; /* Vertically center the logo and text */
+      margin-bottom: 2rem;
+    }
+    .about-page .education-logo {
+      flex: 0 0 20%;
+      max-width: 20%;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
     .education-logo-image {
-      margin: 0 auto;
+      max-width: 100px;
+      height: auto;
     }
+
+    /* Reach Me Section */
+    .reach-me {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.2rem;
+      background-color: var(--global-card-bg-color);
+      border-left: 4px solid var(--global-theme-color);
+      border-radius: 4px;
+      font-size: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .reach-me a {
+      color: var(--global-theme-color);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .reach-me a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Block */
     .social {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
     .contact-icons {
-      font-size: 2rem;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
     .contact-icons a {
-      margin: 0 10px;
+      transition: transform 0.2s ease-in-out, color 0.2s;
+    }
+    .contact-icons a:hover {
+      transform: scale(1.1);
     }
   </style>
   <header class="post-header">

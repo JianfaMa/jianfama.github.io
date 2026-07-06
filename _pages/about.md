@@ -74,6 +74,6 @@ I am a fourth-year undergraduate student in Computer Science at Southern Univers
 
 My research interests lie in embodied AI, autonomous driving, and vision-language models, focusing on enabling autonomous agents to perceive, reason, and act in real-world environments.
 
-How to reach me:
-📧 [majianfa2004@gmail.com](mailto:majianfa2004@gmail.com)
-📧 [12212225@mail.sustech.edu.cn](mailto:12212225@mail.sustech.edu.cn)
+<div class="reach-me">
+  <strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:majianfa2004@gmail.com">majianfa2004@gmail.com</a> &nbsp;&bull;&nbsp; <a href="mailto:12212225@mail.sustech.edu.cn">12212225@mail.sustech.edu.cn</a>
+</div>
