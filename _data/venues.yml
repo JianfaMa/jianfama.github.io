@@ -1,9 +1,43 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"CVPR":
+  url: https://cvpr.thecvf.com/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICCV":
+  url: https://thecvf.com/
+  color: "#0073e6"
 
-"Vision":
-  color: "#009f36"
+"ECCV":
+  url: https://eccv.ecva.net/
+  color: "#00aaff"
+
+"IROS":
+  url: https://www.iros.org/
+  color: "#cc0000"
+
+"ICRA":
+  url: https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra
+  color: "#ff3333"
+
+"RA-L":
+  url: https://www.ieee-ras.org/publications/ra-l
+  color: "#e6b800"
+
+"CoRL":
+  url: https://corl.org/
+  color: "#ff6600"
+
+"RSS":
+  url: https://roboticsconference.org/
+  color: "#9933cc"
+
+"NeurIPS":
+  url: https://nips.cc/
+  color: "#009933"
+
+"ICLR":
+  url: https://iclr.cc/
+  color: "#33cc33"
+
+"ICML":
+  url: https://icml.cc/
+  color: "#66ff66"

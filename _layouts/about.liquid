@@ -2,6 +2,31 @@
 layout: default
 ---
 <div class="post about-page">
+  <style>
+    .profile .img-fluid {
+      max-width: 70%;
+      margin: 0 auto;
+      display: block;
+    }
+    .education-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .education-logo-image {
+      margin: 0 auto;
+    }
+    .social {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .contact-icons {
+      font-size: 2rem;
+    }
+    .contact-icons a {
+      margin: 0 10px;
+    }
+  </style>
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -25,8 +50,8 @@ layout: default
             {% assign profile_image_class = 'img-fluid z-depth-1
       rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.4}}px, (min-width: 576px)
-      40vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
@@ -48,7 +73,7 @@ layout: default
             {% if edu.logo %}
               <div class="education-logo">
                 {% assign education_logo_path = edu.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=education_logo_path class="education-logo-image" width="150" sizes="150px" alt=edu.logo_alt loading="eager" %}
+                {% include figure.liquid path=education_logo_path class="education-logo-image" width="80" sizes="80px" alt=edu.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
@@ -69,7 +94,7 @@ layout: default
             {% if exp.logo %}
               <div class="education-logo">
                 {% assign experience_logo_path = exp.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="150" sizes="150px" alt=exp.logo_alt loading="eager" %}
+                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="80" sizes="80px" alt=exp.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
@@ -107,6 +132,16 @@ layout: default
             </div>
           </div>
         {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">
+          {% social_links %}
+        </div>
+        <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
 
