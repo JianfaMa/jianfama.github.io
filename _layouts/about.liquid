@@ -21,14 +21,15 @@ layout: default
       margin-bottom: 2rem;
     }
     .about-page .education-logo {
-      flex: 0 0 85px; /* Narrower column to reduce gap */
-      max-width: 85px;
+      flex: 0 0 65px; /* Narrower column to reduce gap for smaller logos */
+      max-width: 65px;
       display: flex;
       justify-content: center;
       margin-top: 0.2rem; /* Slight adjustment to align with first text line */
     }
-    .education-logo-image {
-      max-width: 65px;
+    .about-page .education-logo img {
+      width: 55px !important; /* Force override of _components.scss */
+      max-width: 55px !important;
       height: auto;
     }
 
@@ -115,7 +116,7 @@ layout: default
             {% if edu.logo %}
               <div class="education-logo">
                 {% assign education_logo_path = edu.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=education_logo_path class="education-logo-image" width="65" sizes="65px" alt=edu.logo_alt loading="eager" %}
+                {% include figure.liquid path=education_logo_path class="education-logo-image" width="55" sizes="55px" alt=edu.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
@@ -136,7 +137,7 @@ layout: default
             {% if exp.logo %}
               <div class="education-logo">
                 {% assign experience_logo_path = exp.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="65" sizes="65px" alt=exp.logo_alt loading="eager" %}
+                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="55" sizes="55px" alt=exp.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
