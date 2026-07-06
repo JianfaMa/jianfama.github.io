@@ -17,17 +17,18 @@ layout: default
 
     /* Education and Experience logos */
     .about-page .education-item {
-      align-items: center; /* Vertically center the logo and text */
+      align-items: flex-start; /* Top align the logo and text */
       margin-bottom: 2rem;
     }
     .about-page .education-logo {
-      flex: 0 0 20%;
-      max-width: 20%;
+      flex: 0 0 85px; /* Narrower column to reduce gap */
+      max-width: 85px;
       display: flex;
       justify-content: center;
+      margin-top: 0.2rem; /* Slight adjustment to align with first text line */
     }
     .education-logo-image {
-      max-width: 100px;
+      max-width: 65px;
       height: auto;
     }
 
@@ -114,7 +115,7 @@ layout: default
             {% if edu.logo %}
               <div class="education-logo">
                 {% assign education_logo_path = edu.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=education_logo_path class="education-logo-image" width="80" sizes="80px" alt=edu.logo_alt loading="eager" %}
+                {% include figure.liquid path=education_logo_path class="education-logo-image" width="65" sizes="65px" alt=edu.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
@@ -135,7 +136,7 @@ layout: default
             {% if exp.logo %}
               <div class="education-logo">
                 {% assign experience_logo_path = exp.logo | prepend: 'assets/img/' %}
-                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="80" sizes="80px" alt=exp.logo_alt loading="eager" %}
+                {% include figure.liquid path=experience_logo_path class="education-logo-image" width="65" sizes="65px" alt=exp.logo_alt loading="eager" %}
               </div>
             {% endif %}
             <div class="education-content">
