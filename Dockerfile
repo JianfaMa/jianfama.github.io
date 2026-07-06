@@ -61,7 +61,9 @@ ADD Gemfile /srv/jekyll
 WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
-RUN gem install --no-document jekyll bundler
+RUN gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && \
+    gem install --no-document jekyll bundler
+RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 RUN bundle install --no-cache
 
 EXPOSE 8080
