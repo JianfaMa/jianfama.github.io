@@ -2,10 +2,15 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
-first_name: 
+title: Jianfa Ma (马健发) # the website title (if blank, full name will be used instead)
+first_name: Jianfa
 middle_name: 
-last_name: Jianfa Ma (马健发)
+last_name: Ma
+email: majianfa2004@gmail.com
+github_username: Pluviophil3
+scholar_userid: 
+linkedin_username: 
+twitter_username: 
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"

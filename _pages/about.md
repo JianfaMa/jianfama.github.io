@@ -8,7 +8,7 @@ profile:
   align: right
   image: prof_bug.jpg
   image_circular: false # crops the image to make it circular
-  more_info: 
+  more_info:
 
 show_education: true
 education:
@@ -66,12 +66,10 @@ awards:
       - "[Meituan 3rd Low-Altitude Economy Intelligent Flight Management Challenge](https://uav-challenge.meituan.com/)"
       - "Project: Embodied Navigation and Delivery System for Open World with Natural Language Instructions"
       - "Awarded by Meituan Academy of Robotics Shenzhen at [IROS 2025](https://iros2025.org/)"
-
-
 ---
 
-I am a fourth-year undergraduate student in Computer Science at Southern University of Science and Technology (SUSTech), and I will start my M.Sc. in Computer Science at The Chinese University of Hong Kong (CUHK) in Fall 2026. 
+I am a fourth-year undergraduate student in Computer Science at Southern University of Science and Technology (SUSTech), and I will start my M.Sc. in Computer Science at The Chinese University of Hong Kong (CUHK) in Fall 2026.
 
-My research interests lie in embodied AI, autonomous driving, and vision-language models, focusing on enabling autonomous agents to perceive, reason, and act in real-world environments. 
+My research interests lie in embodied AI, autonomous driving, and vision-language models, focusing on enabling autonomous agents to perceive, reason, and act in real-world environments.
 
-How to reach me: majianfa2004@gmail.com
+How to reach me: [majianfa2004@gmail.com](mailto:majianfa2004@gmail.com) / [12212225@mail.sustech.edu.cn](mailto:12212225@mail.sustech.edu.cn)
