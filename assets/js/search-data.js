@@ -434,7 +434,7 @@ ninja.data = [{
               window.location.href = "/projects/airsim-quadrotor-controller/";
             },},{id: "projects-meituan-uav-challenge",
           title: 'Meituan UAV Challenge',
-          description: "An embodied navigation and delivery system for open-world environments with natural-language instructions.",
+          description: "An open-world embodied navigation and delivery system that turns natural-language requests into safe, precise UAV missions.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/meituan-uav-challenge/";
             },},{id: "projects-rogaussianocc",
