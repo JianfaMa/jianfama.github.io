@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">RoGaussianOCC project cover preview</title>
+  <desc id="description">A technical portfolio cover illustrating temporal 3D Gaussian semantic occupancy prediction.</desc>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="38" x2="1115" y2="644" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.5" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#6d286f"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="626" y1="230" x2="1060" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="0.52" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <g opacity=".11" stroke="#fff">
+    <path d="M0 112h1200M0 225h1200M0 338h1200M0 451h1200M0 564h1200"/>
+    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+
+  <g transform="translate(676 132)">
+    <path d="m32 82 176-68 222 83-182 79Z" fill="#ffffff" fill-opacity=".055" stroke="#c4b5fd" stroke-width="2"/>
+    <path d="m32 82 2 255 214 85V176M248 422l182-87V97" fill="none" stroke="#c4b5fd" stroke-width="2" opacity=".55"/>
+    <path d="M34 337 215 254l215 81M34 274l181-82 215 80M34 210l181-80 215 78M34 146l181-74 215 72" fill="none" stroke="#fff" stroke-width="1.5" opacity=".13"/>
+    <path d="M88 103v256M145 80v302M206 55v348M276 39v350M345 65v294M397 84v270" stroke="#fff" stroke-width="1.5" opacity=".13"/>
+
+    <g filter="url(#glow)">
+      <ellipse cx="115" cy="280" rx="34" ry="20" fill="#22d3ee" fill-opacity=".65" transform="rotate(-18 115 280)"/>
+      <ellipse cx="166" cy="248" rx="42" ry="23" fill="#60a5fa" fill-opacity=".7" transform="rotate(20 166 248)"/>
+      <ellipse cx="220" cy="294" rx="44" ry="26" fill="#a78bfa" fill-opacity=".72" transform="rotate(-8 220 294)"/>
+      <ellipse cx="272" cy="232" rx="40" ry="24" fill="#c084fc" fill-opacity=".72" transform="rotate(24 272 232)"/>
+      <ellipse cx="331" cy="273" rx="46" ry="26" fill="#f472b6" fill-opacity=".72" transform="rotate(-14 331 273)"/>
+      <ellipse cx="368" cy="202" rx="30" ry="20" fill="#fb7185" fill-opacity=".7" transform="rotate(17 368 202)"/>
+      <ellipse cx="204" cy="177" rx="30" ry="19" fill="#22d3ee" fill-opacity=".58" transform="rotate(-24 204 177)"/>
+      <ellipse cx="309" cy="151" rx="34" ry="20" fill="#a78bfa" fill-opacity=".64" transform="rotate(12 309 151)"/>
+    </g>
+
+    <g fill="none" stroke="url(#beam)" stroke-width="5" stroke-linecap="round">
+      <path d="M72 360c66-72 110-20 164-79 57-63 111-21 174-104"/>
+      <path d="M72 373c81-48 134-9 194-58 51-41 94-44 148-103" opacity=".42"/>
+    </g>
+    <g fill="#fff" opacity=".92">
+      <circle cx="72" cy="360" r="5"/><circle cx="236" cy="281" r="5"/><circle cx="410" cy="177" r="5"/>
+    </g>
+  </g>
+
+  <g fill="#fff">
+    <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">3D SEMANTIC OCCUPANCY</text>
+    <text x="86" y="194" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="760">RoGaussianOCC</text>
+    <text x="88" y="245" fill="#c4b5fd" font-family="Inter, Arial, sans-serif" font-size="27">Temporal fusion · 3D Gaussians · Autonomous driving</text>
+  </g>
+  <g transform="translate(86 526)">
+    <rect width="406" height="72" rx="18" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".28"/>
+    <text x="25" y="46" fill="#f5f3ff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">32.20% IoU · 20.65% mIoU</text>
+  </g>
+  <text x="1114" y="624" fill="#e9d5ff" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="end">ROBUST TEMPORAL PERCEPTION</text>
+</svg>

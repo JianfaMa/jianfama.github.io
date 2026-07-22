@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">AirHunt project cover preview</title>
+  <desc id="description">A technical portfolio cover illustrating continuous UAV object navigation guided by vision-language semantics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="72" y1="34" x2="1120" y2="654" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1220"/>
+      <stop offset="0.52" stop-color="#123b4a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="route" x1="135" y1="455" x2="1052" y2="218" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="0.55" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="value" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="0.5" stop-color="#facc15"/>
+      <stop offset="1" stop-color="#fb7185"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <g opacity=".11" stroke="#fff">
+    <path d="M0 112h1200M0 225h1200M0 338h1200M0 451h1200M0 564h1200"/>
+    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+
+  <g opacity=".55" fill="none" stroke="#99f6e4" stroke-width="2">
+    <path d="M655 482 778 414 944 448 1058 381 908 330 760 366Z"/>
+    <path d="M778 414v-76l130-67 150 52v58M944 448v-81l114-44M760 366l148 47 150-90"/>
+    <path d="m908 271 150 52M778 338l166 29" opacity=".55"/>
+  </g>
+  <g opacity=".28">
+    <circle cx="778" cy="414" r="34" fill="#38bdf8"/>
+    <circle cx="908" cy="330" r="48" fill="#facc15"/>
+    <circle cx="1008" cy="356" r="40" fill="#fb7185"/>
+  </g>
+  <rect x="772" y="502" width="250" height="11" rx="5.5" fill="url(#value)" opacity=".9"/>
+  <text x="772" y="535" fill="#a5f3fc" font-family="Inter, Arial, sans-serif" font-size="17">LOW SEMANTIC VALUE</text>
+  <text x="1022" y="535" fill="#fde68a" font-family="Inter, Arial, sans-serif" font-size="17" text-anchor="end">HIGH</text>
+
+  <path d="M552 478c85-93 142-21 205-111 63-90 139-11 241-117" fill="none" stroke="url(#route)" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 18" filter="url(#glow)"/>
+  <circle cx="998" cy="250" r="9" fill="#facc15"/>
+  <circle cx="998" cy="250" r="22" fill="none" stroke="#facc15" stroke-width="3" opacity=".55"/>
+
+  <g transform="translate(744 255)" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 64h164M82 0v128M31 25l102 78M133 25 31 103"/>
+    <rect x="51" y="36" width="62" height="56" rx="14" fill="#14b8a6" stroke="#99f6e4"/>
+    <circle cx="0" cy="64" r="27"/>
+    <circle cx="164" cy="64" r="27"/>
+    <circle cx="82" cy="0" r="27"/>
+    <circle cx="82" cy="128" r="27"/>
+    <path d="M70 92v31h24V92"/>
+  </g>
+
+  <g fill="#fff">
+    <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">AERIAL OBJECT NAVIGATION</text>
+    <text x="86" y="195" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="760">AirHunt</text>
+    <text x="88" y="246" fill="#99f6e4" font-family="Inter, Arial, sans-serif" font-size="27">VLM semantics · Continuous planning · UAV</text>
+  </g>
+  <g transform="translate(86 526)">
+    <rect width="392" height="72" rx="18" fill="#facc15"/>
+    <text x="27" y="46" fill="#422006" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800">73.1% SUCCESS · 10+ H FLIGHT</text>
+  </g>
+  <text x="1114" y="624" fill="#ccfbf1" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="end">SEMANTICS × CONTINUOUS FLIGHT</text>
+</svg>
