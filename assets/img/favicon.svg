@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jianfa Ma monogram">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="57" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#26134f"/>
+      <stop offset="0.55" stop-color="#5d2aa5"/>
+      <stop offset="1" stop-color="#087f8c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="34" y1="17" x2="52" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a7f3d0"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg)"/>
+  <path d="M14 18h15v20.5C29 46 24.9 50 18.4 50c-3.1 0-5.6-.8-7.4-2.2l2.9-5.1c1.2.8 2.5 1.2 3.9 1.2 2.8 0 4.2-1.7 4.2-5.5V24h-8z" fill="#fff"/>
+  <path d="M34 47V18h5.5L46 28.2 52.5 18H58v29h-6V29.7l-6 9.1-6-9.1V47z" fill="url(#accent)"/>
+  <circle cx="14" cy="18" r="2.5" fill="#67e8f9"/>
+  <circle cx="58" cy="47" r="2.5" fill="#a7f3d0"/>
+</svg>

@@ -1,0 +1,251 @@
+\documentclass[lettersize,journal]{IEEEtran}
+
+
+% custom package
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{booktabs}
+\usepackage{multirow} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{colortbl}
+\usepackage[table]{xcolor} 
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,        % 启用彩色链接
+    linkcolor=black,        % 内部链接（\ref, \pageref等）保持黑色
+    citecolor=black,        % 文献引用（\cite）保持黑色
+    filecolor=black,        % 文件链接保持黑色
+    urlcolor=blue,          % URL链接（\href, \url）使用蓝色
+    % 或者使用自定义颜色
+    % urlcolor=[RGB]{0,102,204}
+} 
+% \hypersetup{
+%     colorlinks=true,
+%     % linkcolor=blue,      % 内部链接颜色
+%     % citecolor=blue,      % 引用链接颜色
+%     urlcolor=blue,       % URL链接颜色
+%     % filecolor=blue       % 文件链接颜色
+% }  % for \rowcolor \cellcolor and gray!
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% end custom package%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%=== Editing tools ============
+\ifodd 1
+\newcommand{\rev}[1]{{\color{blue}#1}} %revise of the text
+\newcommand{\com}[1]{\textbf{\color{red}(COMMENT: #1)}} %comment of the 
+\else
+\newcommand{\rev}[1]{#1}
+\newcommand{\com}[1]{}
+\fi
+
+\newcommand{\term}[1]{{\it #1}}
+\newcommand{\empha}[1]{{\bf #1}}
+\newcommand{\head}[1]{{\bf #1}}
+\newcommand{\scare}[1]{`#1'}
+\newcommand{\code}[1]{{\tt #1}}
+\newcommand{\lnote}[1]{Lognfei: {\color{red}{#1}}}
+\newcommand{\notsure}[1]{{\color[rgb]{0.7,0.7,0.7}{#1}}}
+\newcommand{\todo}[1]{{\color{red}{\textbf{TODO:} #1}}}
+\newcommand{\notice}[1]{{\color{red}{#1}}}
+\newcommand{\bsymb}[1]{{\boldsymbol #1}}
+\newcommand{\tocite}{\rev{[?]}}
+\newcommand{\toref}{\rev{?}\xspace}
+
+\def\fig{Fig.}
+\def\sec{Section }
+% \def\sysname{\texttt{SSP-Nav}\xspace}
+\def\sysname{\texttt{AirHunt}\xspace}
+% \def\sysname{\texttt{FIT}\xspace}
+
+\def\tab{Table}
+\def\eg{e.g.}
+\def\ie{i.e.}
+\def\aka{a.k.a.}
+\def\eqn{Eqn.}
+\def\eq{Eq.}
+\def\alg{Algorithm }
+\def\etc{etc.}
+
+%=== Editing tools ============
+
+
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage{capt-of}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+% \usepackage{cite}
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+% updated with editorial comments 8/9/2021
+
+\makeatletter
+\let\@oldmaketitle\@maketitle% Store \@maketitle
+\renewcommand{\@maketitle}{\@oldmaketitle% Update \@maketitle to insert...
+    \centering  
+    \setlength{\abovecaptionskip}{-3pt}  % 默认约为 10pt
+    \setcounter{figure}{0}
+    \includegraphics[width=1.98\columnwidth]{figures/teaser-3.pdf}
+    \captionof{figure}{
+    A drone performs object navigation in a complex outdoor scenario based on a natural language instruction. (a) Custom-built aerial platform equipped with a LiDAR, an onboard computer, and three cameras. (b) Snapshot of the drone's first-person view during navigation. (c) Bird's-eye view of the experimental scenario showing the flight trajectory (red line). The path starts from the corner of the grassy area (yellow triangle) and ends at the target (red star).
+    }
+    \label{fig:teaser}
+    \vspace{-28pt}
+
+
+}
+\makeatother
+\title{\fontsize{23pt}{27pt}\selectfont 
+AirHunt: Bridging VLM Semantics and Continuous Planning for Efficient Aerial Object Navigation
+% AirHunt: Vision-Language Model Enhanced Asynchronous Planning for Fast Aerial Object Navigation
+}
+
+% \author{
+% %     IEEE Publication Technology,~\IEEEmembership{Staff,~IEEE,}
+% %         % <-this % stops a space
+% % \thanks{This paper was produced by the IEEE Publication Technology Group. They are in Piscataway, NJ.}% <-this % stops a space
+% % \thanks{Manuscript received April 19, 2021; revised August 16, 2021.}
+% }
+\author{Xuecheng Chen, Zongzhuo Liu, Jianfa Ma, Bang Du, Tiantian Zhang, Xueqian Wang, and Boyu Zhou%
+\thanks{Xuecheng Chen, Tiantian Zhang, and Xueqian Wang are with the Shenzhen International Graduate School, Tsinghua University, Shenzhen, China (e-mail: chenxc24@mails.tsinghua.edu.cn; \{zhang.tt, wang.xq\}@sz.tsinghua.edu.cn.)}
+% wang.xq@sz.tsinghua.edu.cn).}%
+\thanks{Zongzhuo Liu and Boyu Zhou are with the Department of Mechanical and Energy Engineering, Southern University of Science and Technology, Shenzhen, China (e-mail: 12432388@mail.sustech.edu.cn; zhouby@sustech.edu.cn).}%
+\thanks{Jianfa Ma is with the Department of Computer Science and Engineering, Southern University of Science and Technology, Shenzhen, China (e-mail: 12212225@mail.sustech.edu.cn).}%
+\thanks{Bang Du is with the Department of Physics, Southern University of Science and Technology, Shenzhen, China (e-mail: 12312607@mail.sustech.edu.cn).}%
+\thanks{Xueqian Wang and Boyu Zhou are co-corresponding authors.}%
+}
+
+
+% The paper headers
+% \markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2021}%
+% {Shell \MakeLowercase{\textit{et al.}}: A Sample Article Using IEEEtran.cls for IEEE Journals}
+
+% \IEEEpubid{0000--0000/00\$00.00~\copyright~2021 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+\begin{document}
+
+\maketitle
+
+
+
+\begin{abstract}
+Recent advances in large Vision-Language Models (VLMs) have provided rich semantic understanding that empowers drones to search for open-set objects via natural language instructions.
+However, prior systems struggle to integrate VLMs into practical aerial systems due to orders-of-magnitude frequency mismatch between VLM inference and real-time planning, as well as VLMs’ limited 3D scene understanding. They also lack a unified mechanism to balance semantic guidance with motion efficiency in large-scale environments.
+To address these challenges, we present \sysname, an aerial object navigation system that efficiently locates open-set objects with zero-shot generalization in outdoor environments by seamlessly fusing VLM semantic reasoning with continuous path planning.
+\sysname features a dual-pathway asynchronous architecture that establishes a synergistic interface between VLM reasoning and path planning, enabling continuous flight with adaptive semantic guidance that evolves through motion.
+Moreover, we propose an active dual-task reasoning module that exploits geometric and semantic redundancy to enable selective VLM querying, and a semantic-geometric coherent planning module that dynamically reconciles semantic priorities and motion efficiency in a unified framework, enabling seamless adaptation to environmental heterogeneity.
+We evaluate \sysname across diverse object navigation tasks and environments, demonstrating a higher success rate with lower navigation error and reduced flight time compared to state-of-the-art methods. Real-world experiments further validate \sysname's practical capability in complex and challenging environments. \textit{Code and dataset will be made publicly available before publication.}
+\end{abstract}
+
+\vspace{-20pt}
+\def\abstractname{Note to Practitioners}
+\begin{abstract}
+This work addresses a critical challenge: drones struggle to efficiently locate arbitrary objects in large outdoor environments when following natural language instructions (e.g., ``a lost red backpack in the forest''). Existing solutions force drones to hover while waiting for AI (VLM) calculations, disrupting continuous flight and slowing search speed, while over-reliance on these AI models leads to short-sighted decisions, abandoning promising areas too early or revisiting already searched spots. \sysname solves these issues with two key practical improvements: (i) an asynchronous design that lets AI reasoning and flight planning run in parallel, enabling smooth, non-stop flight; (ii) smart logic to use AI only for important camera frames and plan routes that prioritize high-potential areas while avoiding redundant travel. For industry users, this translates to faster search times, higher success rates, and better use of drone battery life, which are critical for real-world missions. Limitations include single-drone operation and network connectivity requirements. Future work could extend it to a multi-robot setup and other autonomous systems.
+\end{abstract}
+\vspace{-6pt}
+\begin{IEEEkeywords}
+Autonomous aerial vehicles, Autonomous robots, Path planning, Vision-language model, Vision-based Navigation
+\end{IEEEkeywords}
+
+
+
+\input{intro}
+\input{relatedwork}
+\input{system}
+\input{experiment}
+\section{Conclusion}
+This paper introduces \sysname, an aerial object navigation system that navigates smoothly and efficiently to locate open-set objects based on open-set instructions, with zero-shot generalization to various outdoor scenarios.
+At the core of \sysname is the asynchronous system architecture, which enables the drone to maintain continuous flight while incorporating intermittent guidance from the VLM. 
+We further design two modules, \textit{Active Dual-Task Reasoning} and \textit{Semantic-Geometric Coherent Planning}, that work synergistically to enhance search efficiency and consistency.
+Extensive evaluations in diverse simulation environments and complex real-world scenarios demonstrate its superior performance.
+
+
+% \section*{Acknowledgments}
+% This should be a simple paragraph before the References to thank those individuals and institutions who have supported your work on this article.
+
+
+
+% {\appendix[Proof of the Zonklar Equations]
+% Use $\backslash${\tt{appendix}} if you have a single appendix:
+% Do not use $\backslash${\tt{section}} anymore after $\backslash${\tt{appendix}}, only $\backslash${\tt{section*}}.
+% If you have multiple appendixes use $\backslash${\tt{appendices}} then use $\backslash${\tt{section}} to start each appendix.
+% You must declare a $\backslash${\tt{section}} before using any $\backslash${\tt{subsection}} or using $\backslash${\tt{label}} ($\backslash${\tt{appendices}} by itself
+%  starts a section numbered zero.)}
+
+
+
+%{\appendices
+%\section*{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+% You can choose not to have a title for an appendix if you want by leaving the argument blank
+%\section*{Proof of the Second Zonklar Equation}
+%Appendix two text goes here.}
+
+
+
+% \section{References Section}
+% You can use a bibliography generated by BibTeX as a .bbl file.
+%  BibTeX documentation can be easily obtained at:
+%  http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+%  The IEEEtran BibTeX style support page is:
+%  http://www.michaelshell.org/tex/ieeetran/bibtex/
+ 
+%  % argument is your BibTeX string definitions and bibliography database(s)
+% %\bibliography{IEEEabrv,../bib/paper}
+% %
+% \section{Simple References}
+% You can manually copy in the resultant .bbl file and set second argument of $\backslash${\tt{begin}} to the number of references
+%  (used to reserve space for the reference number labels box).
+
+
+% \newpage
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+% \begin{thebibliography}{1}
+% \bibliographystyle{IEEEtran}
+
+% \end{thebibliography}
+
+
+\newpage
+
+% \section{Biography Section}
+% If you have an EPS/PDF photo (graphicx package needed), extra braces are
+%  needed around the contents of the optional argument to biography to prevent
+%  the LaTeX parser from getting confused when it sees the complicated
+%  $\backslash${\tt{includegraphics}} command within an optional argument. (You can create
+%  your own custom macro containing the $\backslash${\tt{includegraphics}} command to make things
+%  simpler here.)
+ 
+% \vspace{11pt}
+
+% \bf{If you include a photo:}\vspace{-33pt}
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig1}}]{Michael Shell}
+% Use $\backslash${\tt{begin\{IEEEbiography\}}} and then for the 1st argument use $\backslash${\tt{includegraphics}} to declare and link the author photo.
+% Use the author name as the 3rd argument followed by the biography text.
+% \end{IEEEbiography}
+
+% \vspace{11pt}
+
+% \bf{If you will not include a photo:}\vspace{-33pt}
+% \begin{IEEEbiographynophoto}{John Doe}
+% Use $\backslash${\tt{begin\{IEEEbiographynophoto\}}} and the author name as the argument followed by the biography text.
+% \end{IEEEbiographynophoto}
+
+
+
+
+\vfill
+
+\end{document}
+
+

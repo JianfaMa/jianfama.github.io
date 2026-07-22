@@ -2,111 +2,46 @@
 layout: default
 ---
 <div class="post about-page">
-  <style>
-    /* Profile Image */
-    .about-page .profile.float-right {
-      width: 28%; /* Smaller container than default 38% */
-      margin-left: 2rem;
-    }
-    .profile .img-fluid {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 12px; /* Soft rounded corners */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Elegant shadow */
-    }
-
-    /* Education and Experience logos */
-    .about-page .education-item {
-      align-items: center; /* Vertically center the logo and text */
-      margin-bottom: 2rem;
-    }
-    .about-page .education-logo {
-      flex: 0 0 20%;
-      max-width: 20%;
-      display: flex;
-      justify-content: center;
-    }
-    .education-logo-image {
-      max-width: 100px;
-      height: auto;
-    }
-
-    /* Reach Me Section */
-    .reach-me {
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.2rem;
-      background-color: var(--global-card-bg-color);
-      border-left: 4px solid var(--global-theme-color);
-      border-radius: 4px;
-      font-size: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    .reach-me a {
-      color: var(--global-theme-color);
-      text-decoration: none;
-      word-break: break-all;
-    }
-    .reach-me a:hover {
-      text-decoration: underline;
-    }
-
-    /* Social Block */
-    .social {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .contact-icons {
-      font-size: 2.2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    .contact-icons a {
-      transition:
-        transform 0.2s ease-in-out,
-        color 0.2s;
-    }
-    .contact-icons a:hover {
-      transform: scale(1.1);
-    }
-  </style>
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+    <section class="about-hero" aria-labelledby="about-title">
+      <div class="about-hero-content">
+        <p class="about-kicker">{{ page.subtitle }}</p>
+        <h1 id="about-title" class="about-name">
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+            {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        <h2 class="about-role">{{ page.role_title }}</h2>
+        <p class="about-target">
+          <span>{{ page.career_target.primary }}</span>
+          <span>{{ page.career_target.secondary }}</span>
+        </p>
+        <div class="about-summary">{{ content }}</div>
+      </div>
+
+      {% if page.profile and page.profile.image %}
+        <div class="about-hero-profile">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% assign profile_image_class = 'img-fluid rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) 280px, (min-width: 768px) 32vw, 82vw{% endcapture %}
           {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes
+            alt=page.profile.image_alt cache_bust=true
           %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    <div class="clearfix">{{ content }}</div>
+          <div class="profile-caption">
+            <span class="profile-caption-dot" aria-hidden="true"></span>
+            Shenzhen · Hong Kong · Guangzhou
+          </div>
+        </div>
+      {% endif %}
+    </section>
 
     {% if page.show_education and page.education %}
       <h2>Education</h2>
@@ -184,7 +119,9 @@ layout: default
         <div class="contact-icons">
           {% social_links %}
         </div>
-        <div class="contact-note">{{ site.contact_note }}</div>
+        {% if site.contact_note != blank %}
+          <div class="contact-note">{{ site.contact_note }}</div>
+        {% endif %}
       </div>
     {% endif %}
 

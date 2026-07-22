@@ -1,29 +1,17 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-md {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% social_links %}</div>
-      {% endif %}
+      <a class="navbar-brand site-brand" href="{{ '/' | relative_url }}" aria-label="Jianfa Ma home">
+        <span class="brand-mark" aria-hidden="true">JM</span>
+        <span class="brand-copy">
+          <span class="brand-name">
+            {{- site.first_name }}
+            {{ site.last_name -}}
+          </span>
+          <span class="brand-role">Embodied AI · Robotics</span>
+        </span>
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"
@@ -43,7 +31,6 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           {% for page in site.pages %}
-            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
             {% if page.title == 'CV' %}
               {% assign cv_page = page %}
             {% endif %}
@@ -51,8 +38,14 @@
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+            <a
+              class="nav-link"
+              href="{{ '/' | relative_url }}"
+              {% if page.permalink == '/' %}
+                aria-current="page"
+              {% endif %}
+            >
+              About
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -61,7 +54,13 @@
 
           <!-- Projects -->
           <li class="nav-item {% if page.permalink == '/projects/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/projects/' | relative_url }}">
+            <a
+              class="nav-link"
+              href="{{ '/projects/' | relative_url }}"
+              {% if page.permalink == '/projects/' %}
+                aria-current="page"
+              {% endif %}
+            >
               Projects
               {% if page.permalink == '/projects/' %}
                 <span class="sr-only">(current)</span>
@@ -76,13 +75,16 @@
               {% else %}
                 {% assign cv_url = cv_page.cv_pdf | relative_url %}
               {% endif %}
-              <a class="nav-link" href="{{ cv_url }}" target="_blank" rel="noopener noreferrer">CV</a>
+              <a class="nav-link nav-cv-link" href="{{ cv_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                CV
+              </a>
             </li>
           {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
+              <button id="light-toggle" title="Switch color theme" aria-label="Switch color theme">
                 <i class="fa-half-sun-moon" id="light-toggle-system"></i>
                 <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
                 <i class="fa-solid fa-sun" id="light-toggle-light"></i>

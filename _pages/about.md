@@ -2,11 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle:
+subtitle: Incoming M.Sc. in Computer Science at CUHK · Fall 2026
+role_title: Embodied AI & Robotics Algorithm Engineer
+career_target:
+  primary: Seeking algorithm engineering internships in humanoid robotics and UAV systems
+  secondary: Open to 2027 graduate roles
 
 profile:
   align: right
   image: prof_bug.jpg
+  image_alt: Portrait of Jianfa Ma
   image_circular: false # crops the image to make it circular
   more_info:
 
@@ -70,10 +75,20 @@ awards:
       - "Awarded by Meituan Academy of Robotics Shenzhen at [IROS 2025](https://iros2025.org/)"
 ---
 
-I am a fourth-year undergraduate student in Computer Science at Southern University of Science and Technology (SUSTech), and I will start my M.Sc. in Computer Science at The Chinese University of Hong Kong (CUHK) in Fall 2026.
+I build **perception, reasoning, planning, and control systems** for embodied agents operating in real-world environments. My work spans vision-language navigation, autonomous driving, 3D occupancy prediction, and aerial robotics.
 
-My research interests lie in embodied AI, autonomous driving, and vision-language models, focusing on enabling autonomous agents to perceive, reason, and act in real-world environments.
+I am completing my B.Eng. in Computer Science at SUSTech and will begin my M.Sc. in Computer Science at CUHK in Fall 2026. I enjoy turning research ideas into deployable robotic systems, from model development and simulation to ROS integration and real-world experiments.
 
-<div class="reach-me">
-  <strong><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:majianfa2004@gmail.com">majianfa2004@gmail.com</a>
+<div class="hero-contact-card">
+  <div class="hero-contact-main">
+    <span class="hero-contact-label"><i class="fa-solid fa-envelope"></i> Email</span>
+    <a href="mailto:majianfa2004@gmail.com">majianfa2004@gmail.com</a>
+  </div>
+  <div class="hero-contact-status"><span aria-hidden="true"></span> Open to opportunities</div>
+</div>
+
+<div class="hero-actions">
+  <a class="hero-button hero-button-primary" href="mailto:majianfa2004@gmail.com"><i class="fa-solid fa-paper-plane"></i> Contact me</a>
+  <a class="hero-button" href="{{ '/assets/pdf/CV_EN.pdf' | relative_url }}"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+  <a class="hero-button" href="https://github.com/Pluviophil3"><i class="fa-brands fa-github"></i> GitHub</a>
 </div>

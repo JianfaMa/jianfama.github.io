@@ -20,8 +20,12 @@ LABEL authors="Amir Pourmand,George Araújo" \
 #     useradd -u $USERID -m -g $GROUPNAME $USERNAME
 
 # install system dependencies
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends \
+RUN sed -i \
+        -e 's|http://deb.debian.org/debian-security|https://mirrors.tuna.tsinghua.edu.cn/debian-security|g' \
+        -e 's|http://deb.debian.org/debian|https://mirrors.tuna.tsinghua.edu.cn/debian|g' \
+        /etc/apt/sources.list.d/debian.sources && \
+    apt-get -o Acquire::Retries=5 update -y && \
+    apt-get -o Acquire::Retries=5 install -y --fix-missing --no-install-recommends \
         build-essential \
         curl \
         git \
