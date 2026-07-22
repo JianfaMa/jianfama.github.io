@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">AirSim quadrotor controller project image placeholder</title>
+  <desc id="description">A polished placeholder illustration for a continuous-motion quadrotor controller.</desc>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="40" x2="1100" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.5" stop-color="#312e81"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="trajectory" x1="190" y1="430" x2="1020" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <g opacity=".14" stroke="#fff">
+    <path d="M0 112h1200M0 225h1200M0 338h1200M0 451h1200M0 564h1200"/>
+    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+  <path d="M160 482c124 0 159-154 272-154 133 0 109 176 246 176 134 0 139-248 357-248" fill="none" stroke="url(#trajectory)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M160 482c124 0 159-154 272-154 133 0 109 176 246 176 134 0 139-248 357-248" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 22" opacity=".75"/>
+  <g transform="translate(655 250)" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 64h164M82 0v128M31 25l102 78M133 25L31 103"/>
+    <rect x="51" y="36" width="62" height="56" rx="14" fill="#6366f1" stroke="#c4b5fd"/>
+    <circle cx="0" cy="64" r="27"/>
+    <circle cx="164" cy="64" r="27"/>
+    <circle cx="82" cy="0" r="27"/>
+    <circle cx="82" cy="128" r="27"/>
+  </g>
+  <g fill="#fff">
+    <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">CONTROL SYSTEM</text>
+    <text x="86" y="190" font-family="Inter, Arial, sans-serif" font-size="57" font-weight="750">AirSim Quadrotor Controller</text>
+    <text x="88" y="241" fill="#a5f3fc" font-family="Inter, Arial, sans-serif" font-size="27">Continuous motion · Trajectory tracking · Simulation</text>
+  </g>
+  <g transform="translate(86 536)" fill="#fff" font-family="Inter, Arial, sans-serif">
+    <rect width="312" height="62" rx="16" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".24"/>
+    <text x="24" y="40" font-size="24" font-weight="650">METRICS TO BE ADDED</text>
+  </g>
+  <text x="1114" y="624" fill="#cffafe" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="end">REPLACE WITH PROJECT MEDIA</text>
+</svg>

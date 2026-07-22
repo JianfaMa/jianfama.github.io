@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">Meituan UAV Challenge project image placeholder</title>
+  <desc id="description">A polished placeholder illustration for an embodied UAV delivery project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="90" x2="1080" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="0.58" stop-color="#134e4a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="line" x1="230" y1="220" x2="950" y2="455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#facc15"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+  <g opacity=".12" stroke="#fff">
+    <path d="M0 112h1200M0 225h1200M0 338h1200M0 451h1200M0 564h1200"/>
+    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+  <path d="M214 438c151-174 278 30 422-112 138-135 235-32 354-137" fill="none" stroke="url(#line)" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 20"/>
+  <g transform="translate(725 218)" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 70h160M80 0v140M43 43l74 74M117 43l-74 74"/>
+    <rect x="52" y="42" width="56" height="56" rx="14" fill="#14b8a6" stroke="#99f6e4"/>
+    <circle cx="0" cy="70" r="31"/>
+    <circle cx="160" cy="70" r="31"/>
+    <circle cx="80" cy="0" r="31"/>
+    <circle cx="80" cy="140" r="31"/>
+    <path d="M65 98v46h30V98"/>
+  </g>
+  <g fill="#fff">
+    <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">SELECTED PROJECT</text>
+    <text x="86" y="190" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="750">Meituan UAV Challenge</text>
+    <text x="88" y="241" fill="#99f6e4" font-family="Inter, Arial, sans-serif" font-size="27">Embodied navigation · Open-world delivery · Natural language</text>
+  </g>
+  <g transform="translate(86 515)">
+    <rect width="378" height="78" rx="18" fill="#facc15"/>
+    <text x="28" y="50" fill="#422006" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">2ND PLACE · IROS 2025</text>
+  </g>
+  <text x="1114" y="624" fill="#ccfbf1" font-family="Inter, Arial, sans-serif" font-size="20" text-anchor="end">REPLACE WITH PROJECT MEDIA</text>
+</svg>

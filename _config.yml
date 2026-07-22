@@ -4,24 +4,24 @@
 
 title: Jianfa Ma (马健发) # the website title (if blank, full name will be used instead)
 first_name: Jianfa
-middle_name: 
+middle_name:
 last_name: Ma
 email: majianfa2004@gmail.com
 github_username: Pluviophil3
-scholar_userid: 
-linkedin_username: 
-twitter_username: 
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+scholar_userid: hvxKXKYAAAAJ
+linkedin_username:
+twitter_username:
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Jianfa Ma is an embodied AI and robotics researcher working on vision-language navigation,
+  autonomous driving, 3D perception, and UAV systems.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: embodied AI, robotics, humanoid robots, UAV, autonomous driving, computer vision, vision-language models
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://jianfama.github.io
 baseurl: ""
@@ -66,7 +66,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 860px
+max_width: 1032px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -133,17 +133,7 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 # Optional: Set default categories and tags for posts from each source.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-    categories: [external-posts]
-    tags: [medium]
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
-    categories: [external-posts]
-    tags: [google]
+external_sources: []
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -384,7 +374,6 @@ imagemagick:
     - ".jpeg"
     - ".png"
     - ".tiff"
-    - ".gif"
   output_formats:
     webp: "-auto-orient -quality 85"
 
