@@ -2,6 +2,7 @@
 layout: cv
 permalink: /cv/
 title: CV
+published: false
 nav: false
 cv_pdf: /assets/pdf/CV_EN.pdf
 cv_format: rendercv # options: rendercv, jsonresume

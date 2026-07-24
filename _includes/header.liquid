@@ -30,12 +30,6 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          {% for page in site.pages %}
-            {% if page.title == 'CV' %}
-              {% assign cv_page = page %}
-            {% endif %}
-          {% endfor %}
-
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a
@@ -68,19 +62,6 @@
             </a>
           </li>
 
-          {% if cv_page and cv_page.cv_pdf %}
-            <li class="nav-item">
-              {% if cv_page.cv_pdf contains '://' %}
-                {% assign cv_url = cv_page.cv_pdf %}
-              {% else %}
-                {% assign cv_url = cv_page.cv_pdf | relative_url %}
-              {% endif %}
-              <a class="nav-link nav-cv-link" href="{{ cv_url }}" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
-                CV
-              </a>
-            </li>
-          {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
