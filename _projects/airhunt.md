@@ -62,6 +62,6 @@ AirHunt is a real-time aerial navigation system for large-scale unknown outdoor 
 <nav class="project-resource-links" aria-label="AirHunt paper and demos">
   <a href="https://arxiv.org/pdf/2601.12742">📄 Paper (arXiv)</a>
   <a href="{{ '/assets/video/airhunt_real_demo_web.mp4' | relative_url }}">🎥 Real-world demo</a>
-  <a href="{{ '/assets/video/airhunt_demo_web.mp4' | relative_url }}">🛫 AirSim demo</a>
+  <a href="{{ '/assets/video/airhunt_sim_demo_web_4x.mp4' | relative_url }}">🛫 AirSim demo</a>
   <a href="https://zhuanlan.zhihu.com/p/1999301773144376753">✍️ Technical blog</a>
 </nav>
