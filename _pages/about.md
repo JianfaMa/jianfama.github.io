@@ -89,6 +89,7 @@ I am completing my B.Eng. in Computer Science at SUSTech and will begin my M.Sc.
 
 <div class="hero-actions">
   <a class="hero-button hero-button-primary" href="mailto:majianfa2004@gmail.com"><i class="fa-solid fa-paper-plane"></i> Contact me</a>
-  <a class="hero-button" href="{{ '/assets/pdf/CV_EN.pdf' | relative_url }}"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+  <a class="hero-button" href="{{ '/assets/pdf/CV_CH.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-arrow-down"></i> &#20013;&#25991;&#31616;&#21382;</a>
+  <a class="hero-button" href="{{ '/assets/pdf/CV_EN.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-arrow-down"></i> English CV</a>
   <a class="hero-button" href="https://github.com/Pluviophil3"><i class="fa-brands fa-github"></i> GitHub</a>
 </div>
