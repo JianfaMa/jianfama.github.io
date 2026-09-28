@@ -5,11 +5,12 @@ description: A real-time aerial object-navigation system that connects VLM seman
 img: /assets/img/publication_preview/preview_airhunt_4x.gif
 image_alt: AirHunt aerial object navigation preview
 importance: 1
-status: IEEE RA-L · R&R
-period: Apr. 2025 – Oct. 2025
-skills: [VLM, ROS, AirSim, Path Planning, UAV]
+status: IEEE RA-L · Accepted
+period: Apr. 2025 – Dec. 2025
+skills: [AVLN, UAV Navigation, ROS, AirSim, VLMs]
 card_highlights:
   - 73.1% navigation success in simulation
+  - 203% peformance improving with 40% flight time
   - 10+ hours of outdoor flight validation
 ---
 
